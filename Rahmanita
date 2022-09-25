@@ -1,0 +1,16 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt 
+import scipy as sp
+import seaborn as sns
+sns.set()
+from sklearn.impute import SimpleImputer
+#Menginput data
+dataset = pd.read_csv('products_dataset.csv', sep=",")
+dataset.head(5)
+#Explorasi Data
+dataset.shape
+dataset.info()
+#Correlation
+plt.figure(figsize=(20,20))
+sns.heatmap(dataset.corr())
