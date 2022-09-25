@@ -14,3 +14,7 @@ dataset.info()
 #Correlation
 plt.figure(figsize=(20,20))
 sns.heatmap(dataset.corr())
+#Mengidentifikasi nilai tak wajar sebagai missing value
+dataset.isna().sum()
+check_missing = dataset.isnull().sum() * 100 / dataset.shape[0]
+check_missing[check_missing > 0].sort_values(ascending=False)
